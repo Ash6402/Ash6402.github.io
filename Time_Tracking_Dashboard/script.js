@@ -45,7 +45,7 @@ fetch("data.json")
                 cards.forEach((card)=>{
 
                     card.lastElementChild.childNodes[3].innerText = `${data[i].timeframes.daily.current}hrs`;
-                    card.lastElementChild.childNodes[7].innerText = `last week -  ${data[i].timeframes.daily.previous}hrs`;
+                    card.lastElementChild.childNodes[7].innerText = `yesterday -  ${data[i].timeframes.daily.previous}hrs`;
 
                     ++i;
             
@@ -64,7 +64,7 @@ fetch("data.json")
                 cards.forEach((card)=>{
 
                     card.lastElementChild.childNodes[3].innerText = `${data[i].timeframes.monthly.current}hrs`;
-                    card.lastElementChild.childNodes[7].innerText = `last week -  ${data[i].timeframes.monthly.previous}hrs`;
+                    card.lastElementChild.childNodes[7].innerText = `last month -  ${data[i].timeframes.monthly.previous}hrs`;
 
                     ++i;
             
