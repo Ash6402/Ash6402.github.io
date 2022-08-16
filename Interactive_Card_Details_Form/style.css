@@ -30,14 +30,13 @@ input[type=number] {
     background-repeat: no-repeat;
 	background-size: cover;
 	height: 15rem;
-	/* outline: 1px solid red; */
+	margin-bottom: 4em;
 }
 
 .container{
 	max-width: 470px;
 	margin: 0 auto;
 	height: inherit;
-	/* outline: 1px solid red; */
 }
 
 .cards > div{
@@ -122,16 +121,9 @@ input[type=number] {
 
 .formC{
 	position: relative;
-	min-height: calc(100vh - 15rem);
 	padding: 0 1rem;
 	margin: 0 auto;
-	display: flex;
-	align-items: center;
 
-}
-
-.form{
-	padding: 3.2em 0;
 }
 
 input{
