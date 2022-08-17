@@ -178,10 +178,12 @@ body{
 @media screen and (min-width: 768px){
 
     body{
-        display: grid;
-        max-height: 100vh;
-        padding: 8em 3% 0;
-        place-items: start center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0 3%;
+        place-items: center;
     }
 
     .main{
@@ -233,6 +235,20 @@ body{
     #selfcare{
         white-space: nowrap;
     }
+}
+
+@media screen and (min-width: 1300px) {
+
+
+    :root{
+        font-size: 20px;
+    }
+
+    .main{
+        max-width: 1200px;
+    }
+    
+    
 }
 
 @media (hover: hover){
