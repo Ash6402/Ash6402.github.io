@@ -138,7 +138,7 @@ button{
     display: none;
 }
 
-.dropped *{
+.dropped a{
     color: #888;
 }
 
@@ -191,6 +191,7 @@ button{
 .header-btns *:first-child{
     background-color: #fff;
     color: var(--Very-light-red);
+    border: none;
 }
 
 .section{
@@ -521,6 +522,26 @@ button{
 
     #col3{
         grid-area: col3;
+    }
+
+}
+
+@media (hover:hover){
+
+    .sign-up_btn:hover, .header-btns a:first-child:hover{
+        background-color:rgba(255, 143, 112, 0.6);
+        transition: 300ms;
+        color:#fff;
+    }
+
+    .header-btns a:last-child:hover{
+        background-color: #fff;
+        transition: 300ms;
+        color: hsl(353, 100%, 62%);
+    }
+
+    .dropped a:hover{
+        color: #000;
     }
 
 }
