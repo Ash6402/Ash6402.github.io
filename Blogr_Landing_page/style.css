@@ -217,6 +217,10 @@ button{
     display: none;
 }
 
+.section1{
+    margin-bottom: 5rem;
+}
+
 .section2{
     background: url(./images/bg-pattern-circles.svg),hsl(237, 17%, 21%);
     background-repeat: no-repeat;
