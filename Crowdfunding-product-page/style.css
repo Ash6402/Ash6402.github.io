@@ -96,14 +96,14 @@ input[type=number]:focus{
 
 .menu-btn{
     position: relative;
-    z-index: 2;
+    z-index: 8;
     grid-area: menu-btn;
     width: 1.4rem;
 }
 
 .nav-list{
     position: absolute;
-    z-index: 100;
+    z-index: 8;
     background-color: #fff;
     width: 90%;
     margin: 0 auto;
