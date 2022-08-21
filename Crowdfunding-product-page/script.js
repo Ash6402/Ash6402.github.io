@@ -96,7 +96,6 @@ function outofStock(e1, e2, form){
 //-------------To Open and Close the Dropdown Menu------------------------
 //------------------------------------------------------------------------
 
-
 menuBtn.addEventListener('click', ()=>{
     
     navList.classList.toggle('show');
