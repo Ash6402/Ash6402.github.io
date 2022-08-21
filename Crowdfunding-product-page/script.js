@@ -301,4 +301,5 @@ let forms_and_StateManagement = (eventObject ,form, leastAmount, stock, display1
 
         input.value = null;
     }
+
 }
