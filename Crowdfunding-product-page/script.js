@@ -38,30 +38,37 @@ let mseStandModal = document.querySelector("#mseStandModal"); //--For Out-of-Sto
 //------------------State Management on page opening----------------------
 //------------------------------------------------------------------------
 
+sessionStorage.setItem('totalAmount', 76280);
+sessionStorage.setItem('stock1', 250);
+sessionStorage.setItem('stock2', 120);
+sessionStorage.setItem('stock3', 1);
+sessionStorage.setItem('backers', 2789);
+sessionStorage.setItem('status', 76.1);
 
-backedAmount.innerHTML = localStorage.getItem('totalAmount');
-backersAmount.innerHTML = localStorage.getItem('backers');
-statusBar.style.width = (localStorage.getItem('status')) + '%';
+
+backedAmount.innerHTML = sessionStorage.getItem('totalAmount');
+backersAmount.innerHTML = sessionStorage.getItem('backers');
+statusBar.style.width = (sessionStorage.getItem('status')) + '%';
 
 let timeLeft = setInterval(()=>{
-    let expiry = new Date(2022, 10, 1).getTime();
+    let expiry = new Date(2022, 8, 20).getTime();
     let current = new Date().getTime();
     left = expiry - current;
     days = Math.floor(left / (1000 * 60 * 60 * 24));
     daysLeft.innerHTML = `${days}`;
 }, 1000)
 
-stockAmount[0].innerHTML = localStorage.getItem('stock1');
-stockAmount[3].innerHTML = localStorage.getItem('stock1');
-stockAmount[1].innerHTML = localStorage.getItem('stock2');
-stockAmount[4].innerHTML = localStorage.getItem('stock2');
-stockAmount[2].innerHTML = localStorage.getItem('stock3');
-stockAmount[5].innerHTML = localStorage.getItem('stock3');
+stockAmount[0].innerHTML = sessionStorage.getItem('stock1');
+stockAmount[3].innerHTML = sessionStorage.getItem('stock1');
+stockAmount[1].innerHTML = sessionStorage.getItem('stock2');
+stockAmount[4].innerHTML = sessionStorage.getItem('stock2');
+stockAmount[2].innerHTML = sessionStorage.getItem('stock3');
+stockAmount[5].innerHTML = sessionStorage.getItem('stock3');
 
 
-let stock1 = Number(localStorage.getItem('stock1'));
-let stock2 = Number(localStorage.getItem('stock2'));
-let stock3 = Number(localStorage.getItem('stock3'));
+let stock1 = Number(sessionStorage.getItem('stock1'));
+let stock2 = Number(sessionStorage.getItem('stock2'));
+let stock3 = Number(sessionStorage.getItem('stock3'));
 
 if( stock1 == 0){
    outofStock(bambooStand, bambooStandModal, forms[1]);
@@ -259,26 +266,26 @@ let forms_and_StateManagement = (eventObject ,form, leastAmount, stock, display1
 
         successModal();
 
-        let remainingStock = Number(localStorage.getItem(stock));
+        let remainingStock = Number(sessionStorage.getItem(stock));
         remainingStock += -1;
         display1.innerHTML = remainingStock;
         display2.innerHTML = remainingStock;
-        localStorage.setItem(stock, remainingStock);
+        sessionStorage.setItem(stock, remainingStock);
 
-        backers = Number(localStorage.getItem('backers'));
+        backers = Number(sessionStorage.getItem('backers'));
         ++backers;
         backersAmount.innerHTML = backers;
-        localStorage.setItem('backers', backers);
+        sessionStorage.setItem('backers', backers);
 
-        let totalAmount = Number(localStorage.getItem('totalAmount'));
+        let totalAmount = Number(sessionStorage.getItem('totalAmount'));
         totalAmount += Number(input.value);
         backedAmount.innerHTML = `$${totalAmount}`;
-        localStorage.setItem('totalAmount', totalAmount);
+        sessionStorage.setItem('totalAmount', totalAmount);
 
-        let currentStatus = Number(localStorage.getItem('status')); 
-        currentStatus += (totalAmount/100000)*100;
+        let currentStatus = Number(sessionStorage.getItem('status')); 
+        currentStatus = (totalAmount/100000)*100;
         statusBar.style.width = currentStatus+`%`;
-        localStorage.setItem('status', currentStatus);
+        sessionStorage.setItem('status', currentStatus);
 
         if( stock == `stock1` &&  remainingStock == 0){
             outofStock(bambooStand, bambooStandModal, forms[1]);
@@ -296,10 +303,3 @@ let forms_and_StateManagement = (eventObject ,form, leastAmount, stock, display1
     }
 
 }
-
-// localStorage.setItem('totalAmount', 0);
-// localStorage.setItem('stock1', 300);
-// localStorage.setItem('stock2', 300);
-// localStorage.setItem('stock3', 300);
-// localStorage.setItem('backers', 0);
-// localStorage.setItem('status', 0);
