@@ -44,17 +44,17 @@
     <section class="sections section2">
       <div class="number-status">
         <div>
-          <h1>$89,914</h1>
+          <h1 id="backer-amount">$0</h1>
           <p>of $100,000 backed</p>
         </div>
         <hr>
         <div>
-          <h1>5,007</h1>
+          <h1 id="backers">0</h1>
           <p>total backers</p>
         </div>
         <hr>
         <div>
-          <h1>56</h1>
+          <h1 id="days-left">00</h1>
           <p>days left</p>
         </div>
       </div>
@@ -74,7 +74,7 @@
         </p>
       </div>
     
-      <section class="sections in-sections">
+      <section class="sections in-sections" id="bambooStand">
         <div>
           <h4>Bamboo Stand</h4>
           <p class="cyan">Pledge $25 or more</p>
@@ -83,11 +83,11 @@
           you’ll be added to a special Backer member list.
         </p>
         <div>
-          <div class="stocks"><h1>101</h1><p>left</p></div>
-          <button  id="bambooStand-Btn">Select Reward</button>
+          <div class="stocks"><h1 class="stock-amount"></h1><p>left</p></div>
+          <button class="reward" id="bambooStand-Btn">Select Reward</button>
         </div>
       </section>
-      <section class="sections in-sections">
+      <section class="sections in-sections" id="besStand">
         <div>
           <h4>Black Edition Stand</h4>
           <p class="cyan">Pledge $75 or more</p>
@@ -97,11 +97,11 @@
           member list. Shipping is included.
         </p>
         <div>
-          <div class="stocks"><h1>64</h1><p>left</p></div>
-          <button  id="BES-Btn">Select Reward</button>
+          <div class="stocks"><h1 class="stock-amount"></h1><p>left</p></div>
+          <button class="reward" id="BES-Btn">Select Reward</button>
         </div>
       </section>
-      <section class="sections in-sections out-of-stock">
+      <section class="sections in-sections" id="mseStand">
           <div>
             <h4>Mahogany Special Edition</h4>
             <p class="cyan">Pledge $200 or more</p>
@@ -111,8 +111,8 @@
             to our Backer member list. Shipping is included.
           </p>
           <div>
-            <div class="stocks"><h1>0</h1><p>left</p></div>
-            <button>Out of Stock</button>
+            <div class="stocks"><h1 class="stock-amount"></h1><p>left</p></div>
+            <button class="reward" id="MSE-Btn">Select Reward</button>
           </div>
       </section>
     </section>
@@ -127,20 +127,25 @@
           <div class="heading">
             <input type="radio">
             <div>
-              <h4><button class="heading-btn no-reward">Pledge with no reward</button></h4>
+              <button class="heading-btn no-reward">Pledge with no reward</button>
             </div>
           </div>
           <p>
             Choose to support us without a reward if you simply believe in our project. As a backer,
             you will be signed up to receive product updates via email.
           </p>
-
+          <div class="pledge hide">
+              <form action="/" class="pledge-amount free-pledge" onsubmit="return false">
+                <input type="hidden" value="0">
+                <button type="submit">Continue</button>
+              </form>
+          </div>
         </section>
-        <section class="sections in-sections">
+        <section class="sections in-sections" id="bambooStandModal">
           <div class="heading">
             <input type="radio">
             <div>
-              <h4><button class="heading-btn">Bamboo Stand</button></h4>
+              <button class="heading-btn">Bamboo Stand</button>
               <p class="cyan">Pledge $25 or more</p>
             </div>
           </div>
@@ -148,22 +153,21 @@
             You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
             you’ll be added to a special Backer member list.
           </p>
-          <div class="stocks"><h1>101</h1><p>left</p></div>
+          <div class="stocks"><h1 class="stock-amount"></h1><p>left</p></div>
 
           <div class="pledge hide">
             <p>Enter your pledge</p>
-            <div class="pledge-amount">
-              <input type="number" class="number">
-              <button>Continue</button>
-            </div>
+              <form action="/" onsubmit="return false" class="pledge-amount">
+                <input type="number" name="amount" class="number">
+                <button type="submit">Continue</button>
+              </form>
           </div>
       </section>
-        <!-- Selected pledge end -->
-        <section class="sections in-sections">
+        <section class="sections in-sections" id="besStandModal">
           <div class="heading">
             <input type="radio">
             <div>
-              <h4><button class="heading-btn">Black Edition Stand</button></h4>
+              <button class="heading-btn">Black Edition Stand</button>
               <p class="cyan">Pledge $75 or more</p>
             </div>
           </div>
@@ -171,23 +175,23 @@
             You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
             member list. Shipping is included.
           </p>
-          <div class="stocks"><h1>64</h1><p>left</p></div>
-          <!-- Selected pledge start -->
+          <div class="stocks"><h1 class="stock-amount"></h1><p>left</p></div>
           <div class=" pledge hide">
             <p>Enter your pledge</p>
-            <div class="pledge-amount">
-              <input type="number" class="number">
-              <button>Continue</button>
-            </div>
+
+              <form action="/" onsubmit="return false" class="pledge-amount">
+                <input type="number" class="number">
+                <button type="submit">Continue</button>
+              </form>
+
           </div>
         </section>
-        <!-- Selected pledge end -->
-        <section class="sections in-sections out-of-stock">
+        <section class="sections in-sections" id="mseStandModal">
           
           <div class="heading">
-            <input type="radio" disabled>
+            <input type="radio">
             <div>
-              <h4>Mahogany Special Edition</h4>
+              <button class="heading-btn">Mahogany Special Edition</button>
               <p class="cyan">Pledge $200 or more</p>
             </div>
           </div>
@@ -195,14 +199,13 @@
             You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
             to our Backer member list. Shipping is included.
           </p>
-          <div class="stocks"><h1>0</h1> left</div>
-          <!-- Selected pledge  start -->
+          <div class="stocks"><h1 class="stock-amount"></h1> left</div>
           <div class=" pledge hide">
             <p>Enter your pledge</p>
-            <div class="pledge-amount">
-              <input type="number" disabled>
-              <button>Continue</button>
-            </div>
+            <form action="/" onsubmit="return false" class="pledge-amount">
+              <input type="number" class="number">
+              <button type="submit">Continue</button>
+            </form>
           </div>
         </section>
       </section>

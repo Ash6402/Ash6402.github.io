@@ -198,7 +198,7 @@ input[type=number]:focus{
 }
 
 .bookmarked{
-    filter:invert(74%) sepia(59%) saturate(472%) hue-rotate(120deg) brightness(77%) contrast(84%);
+    filter:invert(74%) sepia(47%) saturate(472%) hue-rotate(120deg) brightness(77%) contrast(84%);
 }
 
 .hide{
@@ -232,10 +232,11 @@ input[type=number]:focus{
 
 .status{
     display: block;
-    width: 80%;
+    width: 0;
     height: 100%;
     border-radius: inherit;
     background-color: var(--moderate-cyan);
+    transition: 300ms;
 }
 
 .section3 .paragraphs{
@@ -261,19 +262,6 @@ input[type=number]:focus{
 
 .section3 button{
     padding: 1.2em 3em;
-}
-
-.out-of-stock{
-    opacity: 0.5;
-}
-
-.out-of-stock *{
-    color: #555;
-}
-
-.out-of-stock button{
-    background-color: #666;
-    color: #fff;
 }
 
 .modal{
@@ -362,10 +350,6 @@ input[type=number]:focus{
     color: var(--moderate-cyan);
 }
 
-.invalid{
-    outline: 1px solid #f00;
-}
-
 .success-modal{
     margin: 0 5%;
     border: none;
@@ -390,6 +374,16 @@ input[type=number]:focus{
     z-index: 11;
 }
 
+.free-pledge{
+    width: 100px;
+    margin-left :auto;
+    margin-right: auto;
+}
+
+.free-pledge button{
+    width: 100%;
+}
+
 .show-modal{
     display: block;
     animation: fadeIn 300ms ease-in-out;
@@ -398,6 +392,19 @@ input[type=number]:focus{
 @keyframes fadeIn {
     0%{opacity: 0}
     100%{opacity: 1}
+}
+
+.invalid{
+    outline: 1px solid red;
+}
+
+.out-of-stock{
+    opacity: 0.5;
+}
+
+.out-of-stock .reward, .out-of-stock button[type=submit]{
+    background-color: #555;
+    color: #fff;
 }
 
 @media screen and (min-width:768px){
@@ -519,6 +526,10 @@ input[type=number]:focus{
         align-items: center;
         justify-content: space-between;
         padding-top: 1.5em;
+    }
+
+    .free-pledge{
+        margin-right :0;
     }
 
     .pledge-amount{
