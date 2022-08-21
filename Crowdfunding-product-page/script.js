@@ -297,9 +297,9 @@ let forms_and_StateManagement = (eventObject ,form, leastAmount, stock, display1
 
 }
 
-// localStorage.setItem('totalAmount', 0);
-// localStorage.setItem('stock1', 300);
-// localStorage.setItem('stock2', 300);
-// localStorage.setItem('stock3', 300);
-// localStorage.setItem('backers', 0);
-// localStorage.setItem('status', 0);
+localStorage.setItem('totalAmount', 0);
+localStorage.setItem('stock1', 300);
+localStorage.setItem('stock2', 300);
+localStorage.setItem('stock3', 300);
+localStorage.setItem('backers', 0);
+localStorage.setItem('status', 0);
