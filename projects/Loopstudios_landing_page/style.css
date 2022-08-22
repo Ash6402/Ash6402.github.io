@@ -100,24 +100,32 @@ a{
     width: 100vw;
     height: 100vh;
     top: 0;
-    left: -110%;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.9);
 
+    display: none;
+}
+
+.hideList{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1em;
+    left: -100%;
 
     animation: slideOut 500ms;
-
 }
 
 @keyframes slideOut {
     0%{left: 0}
-    100%{left: -110%}
+    100%{left: -100%}
 }
 
 .showList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
     left: 0;
     animation: slideIn 500ms;
 }
@@ -320,8 +328,9 @@ main{
 
     .header .heading{
         width: 60%;
+        max-width: 18ch;
         margin-left: 0;
-        font-size: 3.5rem;
+        font-size: min(3.5rem, 5vw);
         border: 2px solid var(--white);
     }
 
