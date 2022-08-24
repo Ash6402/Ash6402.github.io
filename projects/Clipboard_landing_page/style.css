@@ -51,6 +51,10 @@ button{
     transition: opacity 100ms;
 }
 
+button:active{
+    transform: scale(0.99);
+ }
+
 a{
     text-decoration: none;
 }
