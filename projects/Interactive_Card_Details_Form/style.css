@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'space grotesk';
+    font-weight: 500;
+	/* outline: 1px solid black; */
+}
+
+:root{
+	--outline: hsl(278, 94%, 30%);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.cards{
+	position: relative;
+	background-image: url(./images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+	background-size: cover;
+	height: 15rem;
+	margin-bottom: 4em;
+}
+
+.container{
+	max-width: 470px;
+	margin: 0 auto;
+	height: inherit;
+}
+
+.cards > div{
+	padding: 2em 5%;
+}
+
+.card-front{
+	position: absolute;
+	bottom: -14%;
+	z-index: 1;
+    background-image: url(./images/bg-card-front.png);
+    background-size: cover;
+	padding: 1em 2em 1em 1em;
+    display: grid;
+    color: white;
+    width: 18em;
+	height: 10em;
+    border-radius: 10px;
+	box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.3);
+}
+
+.circles{
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+.first-circle{
+	display: block;
+	background-color: #fff;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+}
+
+.second-circle{
+	display: block;
+	outline: 1.5px solid #fff;
+	width: 0.9em;
+	height: 0.9em;
+	border-radius: 50%;
+}
+
+.card-number{
+	font-size: 1.1rem;
+	margin-bottom: 1.3em;
+	letter-spacing: 0.1em;
+}
+
+.info{
+	display: flex;
+	justify-content: space-between;
+}
+
+.info p{
+	font-size: 0.8rem;
+}
+
+.card-back{
+	position: relative;
+	bottom: 5%;
+	float: right;
+	background-image: url(./images/bg-card-back.png);
+	width: 18em;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+	height: 10em;
+	color: #fff;
+	display: grid;
+	place-items: center right;
+	box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.3);
+}
+
+.cvc{
+	position: absolute;
+	transform: translateY(-2px);
+	margin-right: 3em;
+	font-size: 0.7rem;
+}
+
+.formC{
+	position: relative;
+	padding: 0 1rem;
+	margin: 0 auto;
+}
+
+input{
+	padding: 0.5em 1em;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	width: 100%;
+	margin: 0.2em 0 1rem;
+	outline: none;
+}
+
+input:focus{
+	outline: 1px solid var(--outline);
+}
+
+input:hover{
+	outline: 1px solid var(--outline);
+}
+
+label{
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	color:hsl(278, 68%, 11%);
+}
+
+.inline-inputs{
+	display: grid;
+	gap: 0.3em;
+	grid-template-columns: 1fr 1fr;
+}
+
+.exp-input input{
+	width: 48%;
+}
+
+.cvc-input input{
+	width: 100%;
+}
+
+.submit-btn{
+	width: 100%;
+	border: none;
+	background-color: hsl(278, 68%, 11%);
+	color: #fff;
+	padding: 1em;
+	border-radius: 8px;
+	font-size: 1rem;
+}
+
+.error, .separateError{
+	transform: translateY(-0.8rem);
+	font-size: 0.7rem;
+	color: #f00;
+}
+
+.invalid{
+	content: "";
+}
+
+.check, .cover{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background-color: hsl(278, 94%, 30%);
+	background-position: center top;
+	border-radius: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.cover{
+	position: absolute;
+	border-radius: 0;
+	top: 0;
+	left: 80px;
+	animation-name: coverAnimation;
+	animation-duration: 700ms;
+	animation-timing-function: ease-in;
+}
+
+@keyframes coverAnimation{
+	0% {left: 0};
+	100% {left: 80px};
+}
+
+.checkmark{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	transform: translateY(50%);
+}
+
+.completed{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	display: none;
+	top:0;
+}
+
+.wrapper{
+	position: absolute;
+	width: 90%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.completed *{
+	text-align: center;
+}
+
+.completed h1{
+	font-size: 2.2rem;
+	color: hsl(278, 68%, 11%);
+	margin: 1rem 0;
+}
+
+.completed p{
+	color: #666;
+	margin: 0.5rem 0 2.5rem;
+}
+
+
+.show{
+	display: block !important;
+}
+
+@media screen and (max-width: 320px){
+
+	.card-front, .card-back{
+		font-size: 0.7rem;
+	}
+
+	.card-front *{
+		font-size: 1em;
+	}
+
+	.card-front{
+		bottom: 10%;
+	}
+}
+
+@media screen and (min-width: 1024px){
+
+	.main{
+		display: flex;
+	}
+	
+	.cards{
+		background-image: url(./images/bg-main-desktop.png);
+		width: 30%;
+		height: 100vh;
+		margin: 0;
+	}
+
+	.formC{
+		width: 320px;
+		display: flex;
+		align-items: center;
+	}
+
+	.cards > div{
+		position: absolute;
+		transform: translateY(-50%);
+		top: 50%;
+		margin: 0;
+		max-width: auto;
+		display: grid;
+		gap: 2rem;
+		height: fit-content;
+		z-index: 2;
+	}
+
+	.card-front{
+		transform: translateX(10vw);
+		position: relative;
+		bottom: auto;
+	}
+
+	.card-back{
+		transform: translateX(15vw);
+		bottom: auto;
+
+	}
+}
