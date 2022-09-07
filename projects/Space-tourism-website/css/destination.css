@@ -1,0 +1,157 @@
+body{
+    background-image: url(../assets/destination/background-destination-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2em;
+}
+
+.heading{
+    text-align: center;
+}
+
+.planetImg{
+    width: 60%;
+    max-width: 18rem;
+    margin: 2em auto;
+}
+
+.btn-list li{
+    width: fit-content;
+}
+
+button{
+    font-size: 1.125rem;
+    padding: 0.5em 0;
+    border-bottom: 2px solid transparent;
+}
+
+.btn-list{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.planet-name{
+    font-size: min(4.5em, 20vw);
+    font-weight: 400;
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+}
+
+.text{
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    min-height: calc(8 * 1.2em);
+    max-width: 35ch;
+    margin: 0 auto;
+}
+
+.info{
+    display: grid;
+    text-align: center;
+    gap: 1.5em;
+    padding: 2em 0 0;
+    margin-top: 2em;
+    border-top: 1px solid #666;
+}
+
+.info-txt{
+    font-size: 0.8rem;
+}
+
+.numbers{
+    font-size: 1.6rem;
+    margin-top: 0.325em;
+}
+
+.btn-active{
+    border-bottom: 2px solid var(--white-clr);
+}
+
+@media screen and (min-width: 768px){
+
+    body{
+        background-image: url(../assets/destination/background-destination-tablet.jpg);
+        padding: 0 0 2em 0;
+    }
+
+    .main{
+        max-width: 35em;
+        margin: 0 auto;
+    }
+
+    .text{
+        min-height: calc(6 * 1.2em);
+    }
+
+    .info{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .info *{
+        flex: 50%; 
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    body{
+        background-image: url(../assets/destination/background-destination-desktop.jpg);
+        padding: 0;
+        display: grid;
+        grid-template-rows: 20%;
+    }
+
+    .main{
+        place-self: start;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 8%;
+        width: 100%;
+        max-width: 1232px;
+        padding: 0 2em;
+    }
+
+    .btn-list{
+        justify-content: flex-start;
+        gap: 2.2em;
+    }
+
+    .heading{
+        margin-bottom: 2.6rem;
+        grid-column: span 2;
+        text-align: left;
+    }
+
+    .container{
+        padding-left: 3em;
+    }
+
+    .container *{
+        text-align: left;
+    }
+
+    article .text{
+        max-width: 50ch;
+        min-height: calc(4 * 1.2em);
+        margin: 0;
+    }
+
+    .planetImg{
+        place-self: center;
+        min-width: 20.5rem;
+    }
+
+    .info{
+        justify-content: flex-start;
+        gap: 4em;
+    }
+}
+
+@media screen and (hover:hover){
+    .btn:hover:not(.btn.btn-active){
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+}

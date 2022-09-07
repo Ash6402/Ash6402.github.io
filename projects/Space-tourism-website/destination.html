@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/destination.css">
+  <script type="module" src="./js/index.js"></script>
+  <script src="./js/destination.js" defer></script>
+</head>
+<body class="destination">
+
+  <header>
+  </header>
+
+  <main class="main">
+    <p class="heading lb-text ff-sans uppercase"><span class="gray">01</span> Pick your destination</p>
+    <img src="./assets/destination/image-moon.webp" alt="moon" class="planetImg" id="img">
+    <div class="container">
+      <ul class="btn-list">
+        <li><button class="btn ff-sans lb-text uppercase" data-index="0">Moon</button></li>
+        <li><button class="btn ff-sans lb-text uppercase"  data-index="1">Mars</button></li>
+        <li><button class="btn ff-sans lb-text uppercase"  data-index="2">Europa</button></li>
+        <li><button class="btn ff-sans lb-text uppercase"  data-index="3">Titan</button></li>
+      </ul>
+      <article>
+        <h2 class="planet-name white ff-serif uppercase"></h2>
+        <p class="text lb-text ff-sans-text"></p>
+      </article>
+      <div class="info uppercase">
+        <div>
+          <p class="info-txt lb-text ff-sans">Avg. distance</p>
+          <p class="numbers white ff-serif" id="distance"></p>
+        </div>
+        <div>
+          <p class="info-txt lb-text ff-sans">Est. travel time</p>
+          <p class="numbers white ff-serif" id="time"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

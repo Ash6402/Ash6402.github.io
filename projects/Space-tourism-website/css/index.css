@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap');
+
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+:root{
+    --white-clr: hsl(0, 0%, 100%);
+    --gray-clr: #666;
+    --lb-text: hsl(231, 77%, 90%); 
+}
+
+body{
+    min-height: 100vh;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white-clr);
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.5em 0;
+    font-family: 'barlow condensed', sans-serif;
+    letter-spacing: 3px;
+}
+
+button{
+    background: transparent;
+    border: none;
+}
+
+header{
+    margin-bottom: 2em;
+}
+
+.nav{
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+    'logo btn' ;
+    z-index: 1;
+}
+
+.link{
+    border-right: 2px solid transparent;
+}
+
+#logo{
+    grid-area: logo;
+}
+
+#menu-btn{
+    position: relative;
+    z-index: 10;
+    grid-area: btn;
+    place-self: center end;
+    transition: transform 100ms;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0 ,0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.index{
+    font-weight: 700;
+}
+
+.links-list{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 65%;
+    padding: 10em 0 0 2em;
+    right: -100%;
+    transition: right 250ms;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.show{
+    right: 0;
+}
+
+@media screen and (min-width: 768px) {
+
+    :root{
+        font-size: 1.125rem;
+    }
+
+    #menu-btn{
+        display: none;
+    }
+
+    .nav{
+        padding: 0 0 0 2em;
+        position: relative;
+        align-items: center;
+        grid-template-areas: 
+        'logo links';
+    }
+
+    .links-list{
+        grid-area: links;
+        height: 100%;
+        padding: 0 2em;
+        margin: 0;
+        right: 0;
+        position: relative;
+        flex-direction: row;
+        place-self: center end;
+        width: auto;
+        gap: 1.5em;
+    }
+
+    li .link{
+        display: block;
+        padding: 1.8em 0;
+        display: flex;
+        gap: 0.3em;
+        flex-wrap: nowrap;
+        border-bottom: 2px solid transparent;
+    }
+
+    .link > span{
+        display: none;
+    }
+
+    .active{
+        border: 0 !important;
+        border-bottom: 2px solid #fff !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+
+    :root{
+        font-size:  clamp(0.95rem, 1.25vw, 1.5rem);
+    }
+
+    header{
+        padding-top: 2em;
+    }
+
+    #logo{
+        width: 3.2rem;
+    }
+
+    .link > span{
+        display: inline;
+    }
+
+    li{
+        width: fit-content;
+    }
+
+    .links-list{
+        width: 80%;
+        justify-content: space-between;
+        padding-right: 4em;
+    }
+}
+
+@media screen and (hover:hover) {
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    .link, .btn{
+        border: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .link:hover:not(.link.active){
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+}
+
+.active{
+    border-right: 2px solid var(--white-clr);
+}
+
+.fixed{
+    position: fixed !important;
+    top: 2.8em;
+    right: 2em;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+
+.ff-sans{
+    font-family: 'barlow condensed', sans-serif;
+    letter-spacing: 2px;
+}
+
+.ff-sans-text{
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.ff-serif{
+    font-family: 'bellefair', serif;
+    letter-spacing: 1px;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.lb-text{
+    color: var(--lb-text);
+}
+
+.white{
+    color: var(--white-clr);
+}
+
+.gray{
+    color: var(--gray-clr);
+}
+
+.heading{
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}

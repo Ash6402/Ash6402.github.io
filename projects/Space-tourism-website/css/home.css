@@ -1,0 +1,118 @@
+/* *{
+    outline: 1px solid red;
+} */
+
+
+body{
+    background-image: url(../assets/home/background-home-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2em;
+}
+
+.main{
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - 48px - 7em);
+}
+
+.text{
+    text-align: center;
+    color: #d0d6f9;
+    font-size: 1.2rem;
+}
+
+.heading{
+    font-size: 1.3rem;
+}
+
+.space{
+    margin: 2em 0;
+    color: #fff;
+    font-size: min(4.5em, 25vw);
+}
+
+.circle{
+    display: grid;
+    place-items: center;
+    width: 9em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+    transition: box-shadow 500ms;
+
+    animation: ripple 1s;
+    animation-delay: 600ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ripple{
+    0%{box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.5);}
+    100%{box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0);}
+}
+
+.circle:hover{
+    animation: hover 600ms;
+    box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes hover {
+    0%{box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0)}
+    100%{box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.1);}
+}
+
+@media screen and (min-width: 768px) {
+
+    body{
+        background-image: url(../assets/home/background-home-tablet.jpg);
+        background-position: bottom center;
+        padding: 0 0 2em 0;
+    }
+
+    .main{
+        gap: 4em;
+    }
+
+    .text{
+        max-width: 52ch;
+        margin: 0 auto;
+    }
+
+    .circle{
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    body{
+        background-image: url(../assets/home/background-home-desktop.jpg);
+        padding: 0;
+    }
+
+    .main{
+        width: 100%;
+        max-width: 1232px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 3em max(6em, 9vw) 3em;
+        margin: 0 auto;
+        align-items: end;
+    }
+
+    .text{
+        max-width: 40ch;
+        text-align: left;
+    }
+
+    .space{
+        font-size: 7rem;
+    }
+
+    .circle{
+        font-size: 1.7rem;
+    }
+
+}
