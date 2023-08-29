@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --p-dark-blue:hsl(233, 26%, 24%);
+    --p-lime-green: hsl(136, 65%, 51%);
+    --p-bright-cyan: hsl(192, 70%, 51%);
+
+    --n-grayish-blue: hsl(233, 8%, 62%);
+    --n-light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --n-white: hsl(0, 0%, 100%);
+    --n-black: hsl(0, 0%, 0%);
+
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-bold: 700;
+    --ff-sans: "public sans", system-ui, sans-serif;
+
+    font-size: 62.5%;  /* to make 1rem = 10px for easy calculation */
+}
+
+body{
+    font-size: 1.8rem;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: var(--ff-sans);
+    /* outline: 1px solid red; */
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: var(--fw-normal);
+}
+
+input,
+button,
+textarea{
+    font-family: inherit;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:  var(--n-black);
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+button{
+    background: transparent;
+    border: none;
+}
+
+.container{
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+.header{
+    position: relative;
+    z-index: 9999;
+    -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--n-white);
+}
+
+.nav{
+    position: relative;
+    z-index: 10;
+    padding: 1.2em 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -webkit-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+}
+
+.nav-links{
+    border-radius: 5px;
+    position: absolute;
+    background-color: var(--n-white);
+    justify-self: center;
+    width: calc(100% - 2em);
+    margin-top: 4em;
+    z-index: 99;
+    overflow: hidden;
+    display: none;
+}
+
+.rollDown{
+    display: block;
+    height: 268px;
+    -webkit-animation: rolldown 200ms ease-in;
+            animation: rolldown 200ms ease-in;
+}
+
+@-webkit-keyframes rolldown {
+    0%{height: 0}
+    100%{height: 268px}
+}
+
+@keyframes rolldown {
+    0%{height: 0}
+    100%{height: 268px}
+}
+
+.rollUp{
+    display: block;
+    height: 0;
+    -webkit-animation: rollup 200ms ease-out;
+            animation: rollup 200ms ease-out;
+}
+
+@-webkit-keyframes rollup {
+    0%{height: 268px;}
+    100%{height: 0;}
+}
+
+@keyframes rollup {
+    0%{height: 268px;}
+    100%{height: 0;}
+}
+
+.links-list{
+    margin-block: 2em;
+    text-align: center;
+}
+
+.links-list .list-item{
+    padding-block: 0.5em;
+}
+
+.menu-btn{
+    z-index: 100;
+    place-self: center end;
+}
+
+.btn-img{
+    max-width: 4rem;
+}
+
+.invite-btn{
+    background: -webkit-gradient(linear, left top, right top, from(var(--p-lime-green)), to(var(--p-bright-cyan)));
+    background: -o-linear-gradient(left, var(--p-lime-green), var(--p-bright-cyan));
+    background: linear-gradient(to right, var(--p-lime-green), var(--p-bright-cyan));
+    border-radius: 100px;
+    padding: 0.8em 1.5em;
+    font-size: 1.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--n-white);
+}
+
+.header-btn{
+    justify-self: end;
+    -ms-flex-item-align: center;
+        align-self: center;
+}
+
+.hero-image{
+    position: relative;
+    background-image: url(../../images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 30rem;
+}
+
+.mobile-images{
+    position: absolute;
+    bottom: 0;
+}
+
+.section2 p{
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.section1 .sec1-article .heading{
+    margin-inline: auto;
+    text-align: center;
+    font-size: 4rem;
+    max-width: 20ch;
+}
+
+.section1 .sec1-article p{
+    margin: 2rem;
+    color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.section1 .invite-btn{
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    margin: 0 auto 5rem;
+}
+
+.section2{
+    padding: 5rem 2rem;
+    background-color: var(--n-light-grayish-blue);
+}
+
+.section2 .div1 {
+    margin-inline: auto;
+}
+
+.section2 .div2{
+    display: grid;
+    gap: 1.8rem;
+    margin-inline: auto;
+}
+
+.section2 .container .div2 h3{
+    margin-bottom: 1.6rem;
+}
+
+.section2 p, .section2 h2, .section2 h3{
+    text-align: center;
+}
+
+.section2 p{
+    max-width: 40ch;
+    margin: 0 auto;
+}
+
+.section2 .div1  h2{
+    width: 10ch;
+    margin: 0 auto 2rem;
+}
+
+.section2 .div2 img{
+    margin-inline: auto;
+    margin-bottom: 1.6rem;
+}
+
+.section3 {
+    padding: 5rem 0;
+}
+
+.section3 .container{
+    display: grid;
+    gap: 2rem;
+}
+
+.section3 img{
+    border-radius: 5px;
+}
+
+.section3 h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section3{
+    background-color: var(--very-light-gray);
+}
+
+.section3 article{
+    background-color: var(--n-white);
+    margin-inline: 3rem;
+    display: grid;
+    gap: 3rem;
+    border-radius: 5px;
+    padding-bottom: 4rem;
+}
+
+.section3 article div{
+    display: grid;
+    gap: 1rem;
+    margin-inline: 2rem;
+}
+
+.section3 article p{
+    font-size: 1.5rem;
+}
+
+.section3 article p, .section3 article h6{
+    color: var(--n-grayish-blue);
+}
+
+.hide{
+    display: none;
+}
+
+@media (min-width: 768px){
+    .menu-btn{
+        display: none;
+    }
+
+    .nav{
+        grid-template-columns: 20% 60% 20%;
+        max-width: 1100px;
+        margin-inline: auto;
+        padding-block: 0;
+    }
+
+    .logo{
+        -ms-flex-item-align: center;
+            align-self: center;
+    }
+
+    .nav-links{
+        position: relative;
+        height: auto;
+        margin-top: 0;
+        display: block;
+        width: auto;
+        place-self: center;
+        border-radius: 0;
+    }
+
+    .links-list{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .links-list .list-item{
+        padding: 0;
+        height: 100%;
+    }
+
+    .links-list .list-item a{
+        display: block;
+        padding-block: 1.2em 0.9em;
+        border-bottom: .3em solid transparent;
+        color: var(--n-grayish-blue);
+    }
+
+    .hero-image{
+        height: 40rem;
+        background-image: none;
+    }
+
+    .mobile-images{
+        width: 55rem;
+        right: -10rem;
+        top: -10rem;
+    }
+        
+    .section1{
+        background-image: url(../../images/bg-intro-desktop.svg);
+        background-position: center right -40rem;
+        background-repeat: no-repeat;
+        background-size: 100rem;
+    }
+    
+    .section1 .container{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
+
+    .section1 .hero-image{
+        -webkit-box-flex: 60%;
+            -ms-flex: 60%;
+                flex: 60%;
+        position: static;
+    }
+
+    .section1 article{
+        -webkit-box-flex: 40%;
+            -ms-flex: 40%;
+                flex: 40%;
+        background-color: var(--n-white);
+    }
+
+    .section1 .sec1-article .heading{
+        text-align: left;
+    }
+
+    .section2{
+        padding: 7rem 3rem;
+        margin: 0;
+    }
+
+    .section2 .container{
+        display: grid;
+        gap: 5rem;
+    }
+
+    .section2 .container *{
+        max-width: none;
+    }
+
+    .section2 .div1 *{
+        text-align: left;
+    }
+
+    .section2 .div1{
+        width: 100%;
+    }
+
+    .section2 .div1 h2{
+        width: 100%;
+    }
+
+    .section2 .div1 p{
+        max-width: 60ch;
+        margin: 0;
+        text-align: left;
+    }
+
+    .section2 .div2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .section2 .div2 img{
+        margin: 0;
+    }
+
+    .section2 .container .div2 h3{
+        margin: 0;
+    }
+
+    .section2 .div2 article{
+        display: grid;
+        gap: 2.5rem;
+        max-width: 50ch;
+    }
+
+    .section2 .div2 article *{
+        margin: 0;
+        text-align: left;
+    }
+
+    .hide{
+        display: block;
+    }
+}
+
+@media (hover:hover){
+    .links-list .list-item a:hover{
+        border-bottom: .3em solid var(--p-lime-green);
+
+    }
+}

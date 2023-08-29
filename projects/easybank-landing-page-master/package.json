@@ -1,0 +1,13 @@
+{
+  "name": "13-easybank-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "postcss": "postcss src/css/*css -u autoprefixer -d public/css -w --no-map"
+  },
+  "browserslist": "last 4 versions",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
